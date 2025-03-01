@@ -1,5 +1,6 @@
 from typing import List
 
+# finds the n-th smallest element and puts it at the n-th index (n = 0, ..., len(input))
 def sort(input: List):
     index_smallest = 0
     for i in range(0, len(input) - 1):
