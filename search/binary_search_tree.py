@@ -65,10 +65,10 @@ class BinarySearchTree:
         return node
     
     # get the key with the specified rank
-    def get_node_with_rank(self, rank):
-        return self._get_node_with_rank(self.root, rank)
+    def select(self, rank):
+        return self._select(self.root, rank)
 
-    def _get_node_with_rank(self, node : Node, rank):
+    def _select(self, node : Node, rank):
         if not node:
             return
         left_size = Node.get_size(node.left)
@@ -76,8 +76,8 @@ class BinarySearchTree:
         if rank == left_size:
             return node
         if rank < left_size:
-            return self._get_node_with_rank(node.left, rank)
-        return self._get_node_with_rank(node.right, rank - left_size - 1)
+            return self._select(node.left, rank)
+        return self._select(node.right, rank - left_size - 1)
     
     def rank(self, key):
         return self._rank(self.root, key)

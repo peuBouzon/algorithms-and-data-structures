@@ -41,17 +41,17 @@ class TestBinarySearchTree(unittest.TestCase):
     def test_select_valid_rank(self):
         self.bst.put(2, 'new_left')
         self.bst.put(20, 'new_right')
-        self.assertEqual(self.bst.get_node_with_rank(0).key, 2)
-        self.assertEqual(self.bst.get_node_with_rank(1).key, 5)
-        self.assertEqual(self.bst.get_node_with_rank(2).key, 10)
-        self.assertEqual(self.bst.get_node_with_rank(3).key, 15)
-        self.assertEqual(self.bst.get_node_with_rank(4).key, 20)
+        self.assertEqual(self.bst.select(0).key, 2)
+        self.assertEqual(self.bst.select(1).key, 5)
+        self.assertEqual(self.bst.select(2).key, 10)
+        self.assertEqual(self.bst.select(3).key, 15)
+        self.assertEqual(self.bst.select(4).key, 20)
 
     def test_select_invalid_rank(self):
         self.bst.put(2, 'new_left')
         self.bst.put(20, 'new_right')
-        self.assertIsNone(self.bst.get_node_with_rank(-1))
-        self.assertIsNone(self.bst.get_node_with_rank(5))
+        self.assertIsNone(self.bst.select(-1))
+        self.assertIsNone(self.bst.select(5))
 
     def test_rank_existing_key(self):
         self.bst.put(2, 'new_left')
