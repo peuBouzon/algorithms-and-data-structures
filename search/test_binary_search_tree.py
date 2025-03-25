@@ -1,5 +1,5 @@
 import unittest
-from binary_Search_tree import Node, BinarySearchTree
+from search.binary_search_tree import Node, BinarySearchTree
 
 class TestBinarySearchTree(unittest.TestCase):
     def setUp(self):
